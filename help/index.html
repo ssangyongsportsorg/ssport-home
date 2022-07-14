@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html dir="ltr" lang="zh-TW" class="home-page"><head>
   <meta charset="utf-8">
@@ -7,13 +8,13 @@
 
   
 
-  <link rel="canonical" href="https://ivy-theme.zendesk.com/hc/en-us">
-<link rel="alternate" hreflang="en" href="https://ivy-theme.zendesk.com/hc/en-us">
+  <link rel="canonical" href="">
+<link rel="alternate" hreflang="en" href="">
   
   <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-eee6d8d7fa05e7e79d4f3bfce1e548f7.css" id="stylesheet">
   <link rel="stylesheet" type="text/css" href="//p17.zdassets.com/hc/theming_assets/10132367/4414911562129/style.css?digest=4419627435793">
 
-  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/10132367/cc7b57f792357db786b546f87fa5680b0f477a88.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://uploads-ssl.webflow.com/62ccdc35fa8b20bd790e1f76/62ccdcf4ce0fa3341567b2e5_%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A8%AD%E8%A8%88%20(1)%20(1).jpg">
 
     <script>
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -458,13 +459,12 @@ ga('send', 'pageview');
           <a class="nav-link header-link" href="/">回首頁</a>
         
           
-          <a class="nav-link header-link" href="/hc/en-us/community/topics">社區</a>
+          <a class="nav-link header-link" href="https://community.ssangyongsports.eu.org/login">社區</a>
         
           
           
         
-          <a class="nav-link" rel="nofollow" data-auth-action="signin" title="Opens a dialog" role="button" href="https://community.ssangyongsports.eu.org/login">登入</a>
-        </div>
+
 
     </nav>
   </header> 
@@ -1480,15 +1480,13 @@ ga('send', 'pageview');
             
               <h3 class="h2 md:font-size-3xl lg:font-size-3xl">
                 
-                  Can't find what you're looking for?
-                
+找不到解決問題辦法?                
               </h3>
             
             
-            <a class="button button-primary button-lg my-4" href="/hc/en-us/requests/new">
+            <a class="button button-primary button-lg my-4" href="/p/blog-page_14.html">
               
-                Submit a request
-              
+聯絡我們              
             </a>
           </div>
         </div>
@@ -1670,76 +1668,7 @@ ga('send', 'pageview');
 
 
 
-<template id="tmpl-partial-article-list-sections">
-  &lt;% if (sections.length) { %&gt;
-    <ul class="list-none pl-3 mb-0 font-size-base collapse" id="<%= id %>" :class="{ 'is-visible': isOpen }" data-parent="<%= parentId %>">
-      &lt;% sections.forEach(function(section) { %&gt;
-        <li class="font-medium" x-data="toggle({ isOpen: <%= !!section.isActive %> })" @collapse:show.stop="open" @collapse:hide.stop="close">
 
-          
-          <div class="flex justify-content-between align-items-center">
-            <a class="flex-1 py-2 text-inherit font-semibold" :class="{ 'text-inherit': !isOpen }" href="<%= section.html_url %>">
-              &lt;%= section.name %&gt;
-            </a>
-            <button class="p-2 ml-1 not-a-button border-radius transition cursor-pointer hover:bg-gray-200" :class="{ 'is-active': isOpen }" :aria-expanded="isOpen" data-toggle="collapse" data-target="#section-<%= section.id %>">
-              <svg class="text-inherit fill-current pointer-events-none" :class="{ 'rotate-180': isOpen }" width="12px" height="12px" viewBox="0 0 324 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M162,190 C156,190 150,187 146,183 L7,38 C-2,29 -2,15 7,7 C16,-2 30,-2 39,7 L162,135 L285,7 C293,-2 308,-2 317,7 C326,15 326,29 317,38 L178,183 C174,187 168,190 162,190 Z"></path>
-              </svg>
-            </button>
-          </div>
-
-          
-          &lt;%= partial('partial-article-list-sections', {
-            id: 'section-' + section.id,
-            parentId: '#' + id,
-            sections: section.sections,
-            activeCategoryId: activeCategoryId,
-            activeSectionId: activeSectionId,
-            activeArticleId: activeArticleId,
-            partial: partial
-          }) %&gt;
-
-          
-          &lt;% if (section.articles.length) { %&gt;
-            <ul class="list-none font-size-md pl-0 mb-0 collapse" :class="{ 'is-visible': isOpen }" id="section-<%= section.id %>" data-parent="#<%= id %>">
-              &lt;% section.articles.forEach(function(article) { %&gt;
-                <li>
-                  <a class="block px-3 py-2 text-inherit border-radius transition<% if (article.isActive) { %> bg-gray-100<% } %>" href="<%= article.html_url %>">
-                    &lt;%= article.title %&gt;
-                  </a>
-                </li>
-              &lt;% }); %&gt;
-            </ul>
-          &lt;% } %&gt;
-
-        </li>
-      &lt;% }); %&gt;
-    </ul>
-  &lt;% } %&gt;
-</template>
-
-
-<template id="tmpl-partial-section-list-sections">
-  &lt;% if (sections.length) { %&gt;
-    <ul class="list-unstyled<% if (parent.hasOwnProperty('parent_section_id')) { %> pl-4 mb-0<% } %> font-size-md">
-      &lt;% sections.slice(0, maxSections).forEach(function(section) { %&gt;
-        <li>
-          <a class="block py-2 text-inherit<% if (section.isActive) { %> font-medium<% } %>" href="<%= section.html_url %>">
-            &lt;%= section.name %&gt;
-          </a>
-          &lt;%= partial('partial-section-list-sections', { parent: section, sections: section.sections, maxSections: maxSections, partial: partial }) %&gt;
-        </li>
-      &lt;% }); %&gt;
-      &lt;% if (sections.length &gt; maxSections) { %&gt;
-        <li>
-          <a class="block py-2 text-inherit" href="<%= parent.html_url %>">
-            See more
-          </a>
-        </li>
-      &lt;% } %&gt;
-    </ul>
-  &lt;% } %&gt;
-</template>
 
 
 
